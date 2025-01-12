@@ -1,0 +1,12 @@
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+button:hover{
+    background-color: aliceblue;
+    color: white;
+    border-color: blue;
+}
