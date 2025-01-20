@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Validation</title>
+    <link rel="stylesheet" href="demo1.css">
+</head>
+<body>
+
+    <form action="" onsubmit="return validation()">
+        <label for="Username">Username::&nbsp;&nbsp;</label>
+        <input type="text" name="Username" id="Username" placeholder="Enter the name" oninput="clearError()"> <br> <br>
+        <span id="userError" style="color: red;"></span> <br> <br>
+    
+        <label for="Password">Password::&nbsp;&nbsp;</label>
+        <input type="password" name="Password" id="Password" placeholder="Enter the password" oninput="clearError()"> <br> <br>
+        <span id="passError" style="color: red;"></span> <br> <br>
+    
+        <input type="submit" value="Submit">
+    </form>
+<script src="demo1.js"></script>
+</body>
+</html>
