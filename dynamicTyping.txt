@@ -1,0 +1,93 @@
+🔄 Dynamic Typing in JavaScript
+❓ What is Dynamic Typing?
+
+👉 Dynamic typing means
+you do NOT need to specify data type of a variable
+and the type can change at runtime.
+
+JavaScript is a dynamically typed language.
+
+📌 Example 1: Type changes automatically
+let x = 10;
+console.log(x);
+console.log(typeof x);
+
+x = "Hello";
+console.log(x);
+console.log(typeof x);
+
+x = true;
+console.log(x);
+console.log(typeof x);
+
+✅ Output
+10
+number
+Hello
+string
+true
+boolean
+
+
+👉 Same variable x, different data types.
+
+📌 Example 2: No type declaration needed
+let value = "Arjun";
+console.log(typeof value);
+
+value = 25;
+console.log(typeof value);
+
+✅ Output
+string
+number
+
+📌 Example 3: Dynamic typing + operations
+let a = 10;
+let b = "5";
+
+console.log(a + b);
+console.log(a - b);
+
+✅ Output
+105
+5
+
+Why?
+
++ → string concatenation
+
+- → converts string to number
+
+⚠️ Common Confusion (Interview)
+let x = "10";
+let y = 2;
+
+console.log(x + y);
+console.log(x * y);
+
+✅ Output
+102
+20
+
+🧠 Advantages of Dynamic Typing
+
+✅ Less code
+✅ Faster development
+✅ Easy to learn
+
+⚠️ Disadvantages
+
+❌ Runtime errors
+❌ Unexpected bugs
+❌ Less strict
+
+🔒 How to Avoid Problems?
+
+✔ Use meaningful variable names
+✔ Use typeof checks
+✔ Use TypeScript for large projects
+
+🔑 One-line Interview Answer
+
+JavaScript is dynamically typed because variable types are checked at runtime and can change during execution.

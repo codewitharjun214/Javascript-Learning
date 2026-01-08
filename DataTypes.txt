@@ -1,0 +1,158 @@
+📘 JavaScript Revision – Step 2
+6️⃣ Data Types in JavaScript
+
+JavaScript has 2 main categories of data types:
+
+Primitive (Basic)
+
+Non-Primitive (Reference)
+
+6.1️⃣ Primitive Data Types
+
+👉 These store single values.
+
+1️⃣ Number
+let a = 10;
+let b = 3.5;
+
+console.log(a);
+console.log(b);
+
+✅ Output
+10
+3.5
+
+
+📌 Includes: integer, decimal, negative numbers
+
+2️⃣ String
+let name = "Arjun";
+let city = 'Pune';
+
+console.log(name);
+console.log(city);
+
+✅ Output
+Arjun
+Pune
+
+
+📌 Text is written inside "" or ''
+
+3️⃣ Boolean
+let isLoggedIn = true;
+let isAdmin = false;
+
+console.log(isLoggedIn);
+console.log(isAdmin);
+
+✅ Output
+true
+false
+
+
+📌 Used in conditions
+
+4️⃣ Undefined
+let x;
+console.log(x);
+
+✅ Output
+undefined
+
+
+📌 Variable declared but no value assigned
+
+5️⃣ Null
+let y = null;
+console.log(y);
+
+✅ Output
+null
+
+
+📌 Represents empty / no value
+
+⚠️ Interview Trick:
+
+typeof null
+
+
+Output:
+
+object
+
+
+(⚠️ JavaScript bug)
+
+6️⃣ BigInt (ES2020)
+let bigNumber = 12345678901234567890n;
+console.log(bigNumber);
+
+✅ Output
+12345678901234567890n
+
+
+📌 Used for very large numbers
+
+7️⃣ Symbol (Advanced)
+let id = Symbol("id");
+console.log(id);
+
+✅ Output
+Symbol(id)
+
+
+📌 Mostly used in advanced JS (ignore for now)
+
+🔍 Checking Data Type – typeof
+console.log(typeof 10);
+console.log(typeof "Hello");
+console.log(typeof true);
+console.log(typeof undefined);
+console.log(typeof null);
+
+✅ Output
+number
+string
+boolean
+undefined
+object
+
+6.2️⃣ Non-Primitive Data Types
+
+👉 Store multiple values / references
+
+1️⃣ Object
+let person = {
+  name: "Arjun",
+  age: 21
+};
+
+console.log(person);
+
+✅ Output
+{ name: 'Arjun', age: 21 }
+
+2️⃣ Array
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits);
+
+✅ Output
+[ 'Apple', 'Banana', 'Mango' ]
+
+3️⃣ Function
+function greet() {
+  console.log("Hello");
+}
+
+greet();
+
+✅ Output
+Hello
+
+🔑 Primitive vs Non-Primitive
+Feature	Primitive	Non-Primitive
+Stores	Value	Reference
+Mutable	❌ No	✅ Yes
+Example	Number, String	Object, Array
