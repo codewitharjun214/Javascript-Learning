@@ -1,0 +1,160 @@
+🔁 JavaScript Control Flow
+
+Control flow decides which code runs and when.
+
+Main types:
+
+Conditional Statements
+
+Loops
+
+Jump Statements
+
+1️⃣ Conditional Statements
+🔹 if statement
+let age = 20;
+
+if (age >= 18) {
+  console.log("Eligible to vote");
+}
+
+✅ Output
+Eligible to vote
+
+🔹 if – else
+let marks = 35;
+
+if (marks >= 40) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}
+
+✅ Output
+Fail
+
+🔹 else if
+let score = 75;
+
+if (score >= 90) {
+  console.log("Grade A");
+} else if (score >= 60) {
+  console.log("Grade B");
+} else {
+  console.log("Grade C");
+}
+
+✅ Output
+Grade B
+
+🔹 Nested if
+let username = "admin";
+let password = "1234";
+
+if (username === "admin") {
+  if (password === "1234") {
+    console.log("Login successful");
+  }
+}
+
+✅ Output
+Login successful
+
+2️⃣ switch Statement
+
+Used when multiple conditions depend on one value.
+
+let day = 3;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+}
+
+✅ Output
+Wednesday
+
+
+📌 break stops execution
+📌 default works like else
+
+3️⃣ Loops (Repetition)
+🔹 for loop
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+✅ Output
+1
+2
+3
+4
+5
+
+🔹 while loop
+let i = 1;
+
+while (i <= 3) {
+  console.log(i);
+  i++;
+}
+
+✅ Output
+1
+2
+3
+
+🔹 do...while loop
+let x = 5;
+
+do {
+  console.log(x);
+  x++;
+} while (x < 5);
+
+✅ Output
+5
+
+
+📌 Runs at least once
+
+4️⃣ Loop Control Statements
+🔸 break
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) break;
+  console.log(i);
+}
+
+✅ Output
+1
+2
+
+🔸 continue
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+
+✅ Output
+1
+2
+4
+5
+
+5️⃣ Ternary Operator (Shortcut if-else)
+let age = 17;
+
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
+
+✅ Output
+Minor

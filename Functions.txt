@@ -1,0 +1,166 @@
+🧠 JavaScript Functions
+
+A function is a block of code that runs when called.
+
+1️⃣ Function Declaration
+Syntax
+function functionName() {
+  // code
+}
+
+Example
+function greet() {
+  console.log("Hello JavaScript");
+}
+
+greet();
+
+✅ Output
+Hello JavaScript
+
+
+📌 Can be called before declaration (hoisting)
+
+2️⃣ Function with Parameters
+function add(a, b) {
+  console.log(a + b);
+}
+
+add(5, 3);
+
+✅ Output
+8
+
+3️⃣ Function with Return Value
+function multiply(a, b) {
+  return a * b;
+}
+
+let result = multiply(4, 5);
+console.log(result);
+
+✅ Output
+20
+
+
+📌 return sends value back
+📌 Code after return is NOT executed
+
+4️⃣ Function Expression
+
+Function stored in a variable.
+
+const sayHi = function () {
+  console.log("Hi");
+};
+
+sayHi();
+
+✅ Output
+Hi
+
+
+📌 Not hoisted
+
+5️⃣ Arrow Functions (ES6 🔥)
+Basic Arrow Function
+const greet = () => {
+  console.log("Hello");
+};
+
+greet();
+
+✅ Output
+Hello
+
+Arrow Function with Parameters
+const add = (a, b) => {
+  return a + b;
+};
+
+console.log(add(2, 3));
+
+✅ Output
+5
+
+One-line Arrow Function (Implicit Return)
+const square = n => n * n;
+
+console.log(square(4));
+
+✅ Output
+16
+
+6️⃣ Default Parameters
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+greet();
+greet("Arjun");
+
+✅ Output
+Hello Guest
+Hello Arjun
+
+7️⃣ Early Return Pattern (Recap 🔁)
+function checkNumber(num) {
+  if (num < 0) return "Negative";
+  return "Positive";
+}
+
+console.log(checkNumber(-5));
+console.log(checkNumber(10));
+
+✅ Output
+Negative
+Positive
+
+8️⃣ Function Scope
+function test() {
+  let x = 10;
+  console.log(x);
+}
+
+test();
+// console.log(x); ❌ Error
+
+
+📌 Variables inside function are local
+
+9️⃣ Callback Function (IMPORTANT 🔥)
+
+Function passed as argument.
+
+function greet(name, callback) {
+  console.log("Hi " + name);
+  callback();
+}
+
+function sayBye() {
+  console.log("Bye");
+}
+
+greet("Arjun", sayBye);
+
+✅ Output
+Hi Arjun
+Bye
+
+🔟 Anonymous Function
+setTimeout(function () {
+  console.log("Executed after 1 second");
+}, 1000);
+
+🧠 Interview Tips
+
+✔ Prefer arrow functions
+✔ Use early return
+✔ Understand callback concept
+✔ return stops execution
+
+📌 Quick Comparison
+Type	Hoisted	this
+Declaration	✅	Normal
+Expression	❌	Normal
+Arrow	❌	Lexical

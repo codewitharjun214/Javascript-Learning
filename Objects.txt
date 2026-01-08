@@ -1,0 +1,167 @@
+🧩 JavaScript Objects
+
+An object stores data in key : value pairs.
+
+1️⃣ Creating an Object
+let person = {
+  name: "Arjun",
+  age: 21,
+  city: "Pune"
+};
+
+console.log(person);
+
+✅ Output
+{ name: 'Arjun', age: 21, city: 'Pune' }
+
+2️⃣ Accessing Object Properties
+Dot notation
+console.log(person.name);
+
+Bracket notation
+console.log(person["age"]);
+
+✅ Output
+Arjun
+21
+
+
+📌 Use bracket notation when:
+
+Key has space
+
+Key is dynamic
+
+3️⃣ Adding / Updating Properties
+person.country = "India";
+person.age = 22;
+
+console.log(person);
+
+✅ Output
+{ name: 'Arjun', age: 22, city: 'Pune', country: 'India' }
+
+4️⃣ Deleting Properties
+delete person.city;
+console.log(person);
+
+✅ Output
+{ name: 'Arjun', age: 22, country: 'India' }
+
+5️⃣ Object with Methods (Function inside object)
+let user = {
+  name: "Arjun",
+  greet: function () {
+    console.log("Hello " + this.name);
+  }
+};
+
+user.greet();
+
+✅ Output
+Hello Arjun
+
+
+📌 this → current object
+
+6️⃣ Looping through Objects
+for...in
+for (let key in person) {
+  console.log(key, person[key]);
+}
+
+✅ Output
+name Arjun
+age 22
+country India
+
+7️⃣ Object Destructuring (ES6 🔥)
+let student = {
+  roll: 1,
+  name: "Amit",
+  marks: 85
+};
+
+let { name, marks } = student;
+
+console.log(name);
+console.log(marks);
+
+✅ Output
+Amit
+85
+
+8️⃣ Nested Objects
+let employee = {
+  id: 101,
+  info: {
+    name: "Rahul",
+    dept: "IT"
+  }
+};
+
+console.log(employee.info.name);
+
+✅ Output
+Rahul
+
+9️⃣ Array of Objects (VERY IMPORTANT 🔥)
+let users = [
+  { id: 1, name: "A" },
+  { id: 2, name: "B" }
+];
+
+users.forEach(user => {
+  console.log(user.name);
+});
+
+✅ Output
+A
+B
+
+
+📌 Used in:
+
+APIs
+
+React rendering
+
+Databases
+
+🔟 Object.keys(), values(), entries()
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person));
+
+✅ Output
+[ 'name', 'age', 'country' ]
+[ 'Arjun', 22, 'India' ]
+[ [ 'name', 'Arjun' ], [ 'age', 22 ], [ 'country', 'India' ] ]
+
+1️⃣1️⃣ Copying Objects (IMPORTANT ⚠️)
+❌ Reference copy (bad)
+let a = person;
+a.age = 30;
+
+console.log(person.age);
+
+Output
+30
+
+✅ Shallow copy
+let copy = { ...person };
+copy.age = 25;
+
+console.log(person.age);
+console.log(copy.age);
+
+Output
+22
+25
+
+🧠 Interview Tips
+
+✔ Objects are reference types
+✔ Use destructuring
+✔ Use this carefully
+✔ Spread operator for copy

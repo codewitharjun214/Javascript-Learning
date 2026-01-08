@@ -1,0 +1,147 @@
+⚙️ JavaScript Operators (Operations)
+
+Operators are used to perform operations on values.
+
+1️⃣ Arithmetic Operators
+Operator	Meaning
++	Addition
+-	Subtraction
+*	Multiplication
+/	Division
+%	Modulus (remainder)
+**	Power
+➕ Addition (+)
+let a = 10;
+let b = 5;
+
+console.log(a + b);
+
+✅ Output
+15
+
+➖ Subtraction (-)
+console.log(a - b);
+
+✅ Output
+5
+
+✖ Multiplication (*)
+console.log(a * b);
+
+✅ Output
+50
+
+➗ Division (/)
+console.log(a / b);
+
+✅ Output
+2
+
+🔢 Modulus (%) – remainder
+console.log(10 % 3);
+
+✅ Output
+1
+
+
+📌 Used to check even/odd
+
+🔺 Power (**)
+console.log(2 ** 3);
+
+✅ Output
+8
+
+2️⃣ Assignment Operators
+Operator	Meaning
+=	Assign
++=	Add & assign
+-=	Subtract & assign
+*=	Multiply & assign
+/=	Divide & assign
+let x = 10;
+
+x += 5;
+console.log(x);
+
+x -= 3;
+console.log(x);
+
+✅ Output
+15
+12
+
+3️⃣ Comparison Operators
+Operator	Meaning
+==	Equal (value only)
+===	Strict equal (value + type)
+!=	Not equal
+!==	Strict not equal
+>	Greater than
+<	Less than
+⚠️ == vs === (VERY IMPORTANT)
+console.log(10 == "10");
+console.log(10 === "10");
+
+✅ Output
+true
+false
+
+
+📌 Always use ===
+
+console.log(5 > 3);
+console.log(5 < 3);
+
+✅ Output
+true
+false
+
+4️⃣ Logical Operators
+Operator	Meaning
+&&	AND
+`	
+!	NOT
+AND (&&)
+console.log(true && false);
+
+✅ Output
+false
+
+OR (||)
+console.log(true || false);
+
+✅ Output
+true
+
+NOT (!)
+console.log(!true);
+
+✅ Output
+false
+
+5️⃣ Increment & Decrement
+Post Increment (x++)
+let n = 5;
+console.log(n++);
+console.log(n);
+
+✅ Output
+5
+6
+
+Pre Increment (++x)
+let m = 5;
+console.log(++m);
+
+✅ Output
+6
+
+6️⃣ String Operations
+let first = "Arjun";
+let last = "Kadam";
+
+console.log(first + " " + last);
+
+✅ Output
+Arjun Kadam

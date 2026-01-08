@@ -1,0 +1,114 @@
+📘 JavaScript Revision – Step 1
+1️⃣ What is JavaScript?
+
+JavaScript is a programming language used to make web pages interactive.
+
+Example:
+
+Button click
+
+Form validation
+
+API calls
+
+Dynamic content update
+
+2️⃣ How JavaScript Runs
+
+Runs in browser (Chrome, Edge, etc.)
+
+Runs on server using Node.js
+
+3️⃣ Printing Output (MOST BASIC)
+3.1 console.log()
+console.log("Hello JavaScript");
+console.log(10 + 20);
+
+✅ Output
+Hello JavaScript
+30
+
+
+📌 Used for:
+
+Debugging
+
+Checking values
+
+3.2 alert()
+alert("Welcome to JS");
+
+✅ Output
+
+👉 Popup message:
+
+Welcome to JS
+
+3.3 document.write()
+document.write("Hello World");
+
+✅ Output (on browser page)
+Hello World
+
+
+⚠️ Not recommended in real projects (old method)
+
+4️⃣ Comments in JavaScript
+Single-line comment
+// This is a comment
+
+Multi-line comment
+/*
+This is
+multi-line
+comment
+*/
+
+5️⃣ Variables (IMPORTANT 🔥)
+What is a variable?
+
+A variable stores data/value.
+
+5.1 var (OLD – avoid)
+var x = 10;
+console.log(x);
+
+Output
+10
+
+
+⚠️ Problems:
+
+Can be redeclared
+
+Scope issues
+
+5.2 let (MODERN ✅)
+let age = 21;
+age = 22;
+console.log(age);
+
+Output
+22
+
+
+📌 Can change value
+📌 Block scoped
+
+5.3 const (FIXED VALUE)
+const pi = 3.14;
+console.log(pi);
+
+Output
+3.14
+
+
+❌ This is NOT allowed:
+
+pi = 3.15; // Error
+
+🔑 Quick Summary
+Keyword	Can Change Value	Scope	Use
+var	✅	Function	❌ Old
+let	✅	Block	✅ Best
+const	❌	Block	✅ Default
