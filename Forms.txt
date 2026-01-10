@@ -1,0 +1,133 @@
+Forms & Form Handling (JavaScript)
+❓ What is a Form?
+
+A form is used to collect user input and send it to a server or process it using JavaScript.
+
+1️⃣ Basic HTML Form
+<form id="myForm">
+  <input type="text" id="username" placeholder="Enter name" />
+  <input type="password" id="password" placeholder="Enter password" />
+  <button type="submit">Submit</button>
+</form>
+
+2️⃣ Form Submit Event
+
+By default, form reloads the page on submit.
+
+❌ Default behavior
+
+Page refresh
+
+Data lost
+
+✅ Handle Form Submit with JS
+const form = document.getElementById("myForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // stop reload
+  console.log("Form submitted");
+});
+
+
+Output (on submit)
+
+Form submitted
+
+3️⃣ Reading Input Values
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  console.log(username, password);
+});
+
+
+Output
+
+Arjun 1234
+
+4️⃣ Form Validation (IMPORTANT 🔥)
+Example: Required Fields
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+
+  if (username === "") {
+    alert("Username is required");
+    return; // early return
+  }
+
+  console.log("Valid form");
+});
+
+5️⃣ Using name Attribute (Best Practice)
+<form id="loginForm">
+  <input name="email" />
+  <input name="password" />
+  <button>Login</button>
+</form>
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  console.log(email, password);
+});
+
+
+📌 Cleaner & scalable
+
+6️⃣ Handling Checkbox & Radio
+Checkbox
+<input type="checkbox" id="terms" />
+
+console.log(document.getElementById("terms").checked);
+
+
+Output
+
+true / false
+
+Radio Button
+<input type="radio" name="gender" value="Male" />
+<input type="radio" name="gender" value="Female" />
+
+const gender = document.querySelector('input[name="gender"]:checked').value;
+console.log(gender);
+
+7️⃣ Select Dropdown
+<select id="city">
+  <option value="Pune">Pune</option>
+  <option value="Mumbai">Mumbai</option>
+</select>
+
+console.log(document.getElementById("city").value);
+
+8️⃣ Real-World Example (Login Form)
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const { username, password } = e.target;
+
+  if (!username.value || !password.value) {
+    alert("All fields required");
+    return;
+  }
+
+  console.log("Login success");
+});
+
+9️⃣ Reset Form
+form.reset();
+
+🔟 Common Mistakes ⚠️
+
+❌ Not using preventDefault()
+❌ Using inline events
+❌ Not validating input
+❌ Trusting user input blindly

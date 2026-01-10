@@ -1,0 +1,150 @@
+Local Storage, Session Storage & Cookies (Browser Storage)
+
+These are used to store data in the browser.
+
+1️⃣ Local Storage
+🔹 What is Local Storage?
+
+Stores data permanently
+
+Data remains even after:
+
+Page refresh
+
+Browser close
+
+System restart
+
+Size: ~5–10 MB
+
+Stores only strings
+
+🔹 Set Data
+localStorage.setItem("name", "Arjun");
+
+🔹 Get Data
+console.log(localStorage.getItem("name"));
+
+✅ Output
+Arjun
+
+🔹 Remove Data
+localStorage.removeItem("name");
+
+🔹 Clear All Data
+localStorage.clear();
+
+🔹 Store Object (IMPORTANT ⚠️)
+let user = { id: 1, role: "admin" };
+
+localStorage.setItem("user", JSON.stringify(user));
+
+let data = JSON.parse(localStorage.getItem("user"));
+console.log(data.role);
+
+✅ Output
+admin
+
+📌 Use Cases
+
+✔ Theme (dark / light)
+✔ Language preference
+✔ Remember login UI state
+
+2️⃣ Session Storage
+🔹 What is Session Storage?
+
+Data stored only for one browser tab
+
+Data deleted when tab is closed
+
+Same syntax as localStorage
+
+Size: ~5 MB
+
+🔹 Example
+sessionStorage.setItem("otp", "123456");
+
+console.log(sessionStorage.getItem("otp"));
+
+✅ Output
+123456
+
+
+👉 Close tab → ❌ data deleted
+
+📌 Use Cases
+
+✔ OTP
+✔ Multi-step form data
+✔ Temporary session info
+
+3️⃣ Cookies 🍪
+🔹 What are Cookies?
+
+Small data stored in browser
+
+Automatically sent to server with every request
+
+Size limit: ~4 KB
+
+Can have expiry time
+
+🔹 Create Cookie
+document.cookie = "username=Arjun";
+
+🔹 Cookie with Expiry
+document.cookie =
+  "theme=dark; expires=Fri, 31 Dec 2027 12:00:00 UTC";
+
+🔹 Read Cookies
+console.log(document.cookie);
+
+✅ Output
+username=Arjun; theme=dark
+
+🔹 Delete Cookie
+document.cookie =
+  "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+📌 Use Cases
+
+✔ Authentication
+✔ Session ID
+✔ Tracking (with consent)
+
+🔥 IMPORTANT DIFFERENCES (INTERVIEW FAVORITE)
+Feature	Local Storage	Session Storage	Cookies
+Lifetime	Permanent	Tab only	Set by expiry
+Size	5–10 MB	~5 MB	~4 KB
+Sent to Server	❌ No	❌ No	✅ Yes
+Access	JS only	JS only	JS + Server
+Security	Medium	Medium	Low (unless HttpOnly)
+⚠️ Security Rules (VERY IMPORTANT)
+
+❌ Do NOT store:
+
+Passwords
+
+Sensitive tokens in localStorage/sessionStorage
+
+✅ Best for authentication:
+
+HttpOnly Cookies
+
+🧠 Interview One-Line Answers
+
+Local Storage → persistent browser storage
+
+Session Storage → temporary, tab-based storage
+
+Cookies → small data sent with every HTTP request
+
+✅ Quick Real Example
+// Save login state
+localStorage.setItem("isLoggedIn", "true");
+
+// Read login state
+if (localStorage.getItem("isLoggedIn") === "true") {
+  console.log("User logged in");
+}

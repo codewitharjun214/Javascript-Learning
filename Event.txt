@@ -1,0 +1,167 @@
+JavaScript Events & Event Handling
+❓ What is an Event?
+
+An event is an action that happens in the browser.
+
+Examples:
+
+Click
+
+Key press
+
+Mouse move
+
+Page load
+
+Form submit
+
+1️⃣ Common Event Types
+Event	Trigger
+click	Mouse click
+dblclick	Double click
+mouseover	Mouse enters
+mouseout	Mouse leaves
+keydown	Key pressed
+keyup	Key released
+submit	Form submit
+change	Input change
+load	Page load
+2️⃣ Event Handling Methods
+❌ Inline Event (Not Recommended)
+<button onclick="sayHi()">Click</button>
+
+function sayHi() {
+  alert("Hi");
+}
+
+
+❌ Bad practice
+
+❌ DOM Property Method
+btn.onclick = function () {
+  console.log("Clicked");
+};
+
+
+❌ Overwrites previous handler
+
+✅ addEventListener() (BEST PRACTICE 🔥)
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", () => {
+  console.log("Button clicked");
+});
+
+
+Output (on click)
+
+Button clicked
+
+3️⃣ Event Object (event / e)
+btn.addEventListener("click", (e) => {
+  console.log(e.type);
+  console.log(e.target);
+});
+
+
+Output
+
+click
+<button>...</button>
+
+
+📌 e.target → element that triggered event
+
+4️⃣ Prevent Default Behavior
+Example: Form Submit
+<form id="myForm">
+  <input />
+  <button>Submit</button>
+</form>
+
+document.getElementById("myForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Form submitted");
+});
+
+
+👉 Page will NOT reload
+
+5️⃣ Event Bubbling (IMPORTANT 🔥)
+
+👉 Events flow inside → outside
+
+<div id="parent">
+  <button id="child">Click</button>
+</div>
+
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent clicked");
+});
+
+document.getElementById("child").addEventListener("click", () => {
+  console.log("Child clicked");
+});
+
+
+Output
+
+Child clicked
+Parent clicked
+
+6️⃣ Stop Bubbling
+child.addEventListener("click", (e) => {
+  e.stopPropagation();
+  console.log("Child only");
+});
+
+
+Output
+
+Child only
+
+7️⃣ Event Capturing
+
+👉 Outside → Inside
+
+parent.addEventListener(
+  "click",
+  () => console.log("Parent"),
+  true
+);
+
+8️⃣ Event Delegation (VERY IMPORTANT 🔥🔥)
+
+👉 Handle multiple elements with one listener
+
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+document.getElementById("list").addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    console.log(e.target.textContent);
+  }
+});
+
+
+Output (on click)
+
+Item 1
+
+
+📌 Used heavily in React / dynamic lists
+
+9️⃣ Keyboard Events
+document.addEventListener("keydown", (e) => {
+  console.log(e.key);
+});
+
+🔟 Removing Event Listener
+function handleClick() {
+  console.log("Clicked");
+}
+
+btn.addEventListener("click", handleClick);
+btn.removeEventListener("click", handleClick);

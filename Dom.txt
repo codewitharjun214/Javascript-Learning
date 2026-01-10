@@ -1,0 +1,142 @@
+❓ What is DOM?
+
+The DOM represents an HTML page as a tree of objects.
+JavaScript uses the DOM to read, change, add, or remove HTML/CSS dynamically.
+
+👉 HTML = Structure
+👉 CSS = Style
+👉 JS + DOM = Interaction
+
+1️⃣ Selecting Elements (MOST IMPORTANT)
+
+Assume this HTML:
+
+<h1 id="title">Hello</h1>
+<p class="msg">Welcome</p>
+<button>Click</button>
+
+🔹 getElementById
+const title = document.getElementById("title");
+console.log(title.textContent);
+
+
+Output
+
+Hello
+
+🔹 getElementsByClassName
+const para = document.getElementsByClassName("msg");
+console.log(para[0].textContent);
+
+
+Output
+
+Welcome
+
+🔹 getElementsByTagName
+const btn = document.getElementsByTagName("button");
+console.log(btn[0].textContent);
+
+
+Output
+
+Click
+
+🔹 querySelector (BEST PRACTICE ✅)
+const heading = document.querySelector("#title");
+console.log(heading.textContent);
+
+🔹 querySelectorAll
+const allPara = document.querySelectorAll("p");
+console.log(allPara.length);
+
+
+Output
+
+1
+
+2️⃣ Changing Content
+textContent
+title.textContent = "Hello DOM";
+
+
+👉 Page text becomes:
+
+Hello DOM
+
+innerHTML
+title.innerHTML = "<span>Hi</span>";
+
+
+👉 Renders HTML inside element
+
+⚠️ Use carefully (XSS risk)
+
+3️⃣ Changing Styles (CSS via JS)
+title.style.color = "red";
+title.style.fontSize = "30px";
+
+
+👉 Heading becomes red & big
+
+4️⃣ Adding / Removing Classes
+title.classList.add("active");
+title.classList.remove("active");
+title.classList.toggle("active");
+
+5️⃣ Handling Events (🔥 VERY IMPORTANT)
+Click Event
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  console.log("Button clicked");
+});
+
+
+Output (on click)
+
+Button clicked
+
+Change Text on Click
+button.addEventListener("click", () => {
+  title.textContent = "Clicked!";
+});
+
+6️⃣ Creating & Adding Elements
+const newPara = document.createElement("p");
+newPara.textContent = "New paragraph";
+
+document.body.appendChild(newPara);
+
+
+👉 Adds a new paragraph to the page
+
+7️⃣ Removing Elements
+newPara.remove();
+
+
+👉 Paragraph removed
+
+8️⃣ DOM Traversing
+console.log(title.parentElement);
+console.log(title.nextElementSibling);
+
+
+📌 Useful for navigating HTML tree
+
+9️⃣ Form Handling (Common Interview 🔥)
+<input id="name" />
+<button id="btn">Submit</button>
+
+document.getElementById("btn").addEventListener("click", () => {
+  const value = document.getElementById("name").value;
+  console.log(value);
+});
+
+🔟 DOM Ready (Important)
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Loaded");
+});
+
+
+👉 Ensures HTML is loaded before JS runs
